@@ -1,0 +1,8 @@
+## Fanantenana Devops
+La base de mon future apk
+Creation de la base de donnees pour la bon fonctionnement de l'apk
+## Technologie
+*Python
+*Sqlite(sabre_noire.db)
+## comment l'utiliser
+ Lancer simplement le script avec:"python main.py"
