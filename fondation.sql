@@ -1,3 +1,4 @@
+
 --Table des categories--
 CREATE TABLE IF NOT EXISTS categories(
     id INTEGER PRIMARY KEY AUTOINCREMENT,

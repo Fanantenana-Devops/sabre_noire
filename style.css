@@ -1,0 +1,118 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI' Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 40px;
+}
+.head{
+    font: optional;
+    font-size: 20px;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #2e7d32;
+    padding: 20px;
+}
+.head div h1{
+    font-size: 2.5em;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.head div h2{
+    font-size: 25px;
+}
+.head div p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 200;
+    background-color: transparent;
+}
+.form{
+    text-decoration: none;
+    background-color: aliceblue;
+}
+.form h1{
+    font-size: 18px;
+    color: #2e7d32;
+    gap: 20px;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    flex-direction: row;
+    column-gap: 500px; 
+    cursor: pointer; 
+    gap: 40px;  
+}
+.main div p{
+    font-size: 17px;
+    font: optional;
+    font-style: normal;
+    display: flex;
+    gap: 290px;
+    max-width: 1200px;
+}
+.main div a{
+    padding: 10px 20px;
+    background-color: #38a169;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    border: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100%;
+}
+.main div a:hover{
+    background-color: #1b5e20;
+    cursor: pointer;
+    transform: scale(1.02);
+    transform: translateX(10px);
+}
+.main div img{
+    position: relative;
+    width: 450px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+.image-preview {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+}
+.overlay{
+    position: relative;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+.overlay h3 p{
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+.foot{
+    font-weight: 500;
+    font-size: 0.9em;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+}

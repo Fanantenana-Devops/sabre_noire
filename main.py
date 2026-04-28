@@ -17,7 +17,7 @@ def afficher_especes():
         resultats=cursor.fetchall()
         print("Les listes des especes")
         for ligne in resultats:
-            print(f"Nom:{ligne[o]}|Categories:{ligne[1]}")
+            print(f"Nom:{ligne[0]}|Categories:{ligne[1]}")
         conn.close()
 def lister_tout():
     conn=connecter_db()
@@ -30,6 +30,7 @@ def lister_tout():
     cursor.execute(query)
     for row in query.fetchall():
         print(f"{row[0]} Type:{row[1]}  Statut:{row[2]}")
+    conn.commit()
     conn.close()
 def ajouter_des_especes():
     global nom, sci, stat, desc, cat_id
@@ -44,7 +45,7 @@ def executeur():
     conn=connecter_db()
     cursor=conn.cursor()
     conn.execute('''
-        INSERT INTO espece(nom_commun, nom_sceintifique, status_conservation, descriptions,id_categories)
+        INSERT INTO espece(nom_commun, nom_scientifique, status_conservation, descriptions,id_categories)
         VALUES(?,?,?,?,?)''',(nom,sci,stat,desc,cat_id))
     conn.commit()
     conn.close()

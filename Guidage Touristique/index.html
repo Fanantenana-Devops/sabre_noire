@@ -1,0 +1,50 @@
+><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="style.css">
+    <title>Guidage Touristique</title>
+</head>
+<body>
+    <header>
+        <div class="guidage_contenair">
+            <h2>Trouver votre prochaine aventure</h2>
+            <p>Dites-moi quel est votre budget et ce que vous aimez, je m'occupe du reste.</p>
+        </div>
+    </header>
+    <form action="/recherche-guide" method="POST" class="guide_form">
+        <div class="form_group">
+            <label>Votre budget(AR):</label>
+            <input type="number" name="budget" placeholder="Ex:100000" required>
+        </div>
+        <div class="form_group">
+            <label>Preference:</label>
+            <select name="categorie">
+                <option value="Nature">Nature & Parcs</option>
+                <option value="Plage">Plages & Mer</option>
+                <option value="Culture">Culture & Histoire</option>
+                <option value="Adventure">Hiking & Adventure</option>
+            </select>
+            <p></p>
+            <div>
+                <button type="submit" class="btn_search">Lancer le guidage</button>
+            </div>
+        </div>
+    </form>
+    <div class="resultats_grid">
+        {%for lieu in destinations%}
+        <div class="card_destination">
+            <h3>{{lieu['nom']}}</h3>
+            <P class="tag">{{lieu['region']}}</P>
+            <p>{{lieu['description']}}</p>
+            <div class="price">Des{{lieu['budget_moyen']}}Ar</div>
+            <p></p>
+            <button class="botn_search">Voir l'Itineraire</button>
+        </div>
+        {%else%}
+        <p>Aucun destination trouvee pour ce bubget. Essayer d'augmenter un peu</p>
+        {%endfor%}
+    </div>
+</body>
+</html>
