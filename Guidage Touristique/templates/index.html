@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="/static/style.css">
+    <title>Guidage Touristique</title>
+</head>
+<body>
+    <header>
+        <div class="guidage_contenair">
+            <h2>Trouver votre prochaine aventure</h2>
+            <p>Dites-moi quel est votre budget et ce que vous aimez, je m'occupe du reste.</p>
+        </div>
+    </header>
+    <form action="/recherche-guide" method="POST" class="guide_form">
+        <div class="form_group">
+            <label>Votre budget(AR):</label>
+            <input type="number" name="budget" placeholder="Ex:100000" required>
+        </div>
+        <div class="form_group">
+            <label>Preference:</label>
+            <select name="categorie">
+                <option value="Nature/Parcs">Nature/Parcs</option>
+                <option value="Plage/Luxe">Plages/Mer</option>
+                <option value="Paysage">Hiking/Adventure</option>
+                <option value="Culture/Thermes">Culture/Thermes</option>
+            </select>
+            <p></p>
+            <div>
+                <button type="submit" class="btn_search">Lancer le guidage</button>
+            </div>
+        </div>
+    </form>
+    <div class="resultats_grid">
+        {%for lieu in destinations%}
+            <div class="card_destination">
+                <div class="card_image">   
+                    {% if lieu['chemin_photo'] %}
+                        <img src="/{{ lieu['chemin_photo'] }}" alt="{{ lieu['nom'] }}">
+                    {% else %}
+                        <img src="/static/images/default.jpg" alt="Image par défaut">
+                    {% endif %}
+                </div>
+                <div class="card_content">
+                    <h3>{{ lieu['nom'] }}</h3>
+                    <p class="tag">{{ lieu['region'] }}</p>
+                    <p class="description">{{ lieu['description'] }}</p>
+                    <div class="price">Dès {{ lieu['budget_moyen'] | int }} Ar</div>
+                    <button class="btn_search">Voir l'Itinéraire</button>
+                </div>
+            </div>
+        {% else %}
+            <p class="no_result">Aucune destination trouvée pour ce budget. Essayez d'augmenter un peu !</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Segoe UI' Tahoma, Geneva, Verdana, sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    padding: 40px;
+    padding: 0px;
+    background-color: #f2f2ff;
+}
+header{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+.text_intro{
+    font-size: 22px;
+    border: none;
+    color: #2e7d32;
+}
+
+.option-search{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+.option-search label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #2e7d32;/*Vert reppelant la nature*/
+}
+input, select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+.btn_search{
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.btn_search:hover{
+    background-color: #1b5e20;
+}
+.lien_intro{
+    display: flex;
+    border: none;
+    font-size: 20px;
+}
+
+form{
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    margin: 0px;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.card_body{
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+}
+.card_body img{
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+.card_body p{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: red;
+}

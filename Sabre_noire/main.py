@@ -50,7 +50,7 @@ def executeur():
     conn.commit()
     conn.close()
 
-#if __name__=="__name__":
-executeur()
-afficher_especes()
-lister_tout()
+if __name__=="__name__":
+    executeur()
+    afficher_especes()
+    lister_tout()
